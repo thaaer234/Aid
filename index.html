@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> عيد الفطر</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" href="logo (1).ico" type="image/x-icon">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: url('/d_e7b01189b6257205da2198fb150c6b47.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+            direction: rtl;
+        }
+        .greeting-popup {
+            background-color: rgba(0, 0, 50, 0.7);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+            text-align: center;
+            animation: bounceIn 1s ease-in-out;
+            max-width: 500px;
+        }
+        h1 {
+            color: #ffcc00;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        p {
+            margin: 15px 0;
+            font-size: 1.2rem;
+            color: #f5f5f5;
+        }
+        button {
+            padding: 15px 30px;
+            background-color: #34a853;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        button:hover {
+            background-color: #2b7c3d;
+        }
+        .icons {
+            margin-top: 20px;
+            font-size: 1.5rem;
+            color: #ffcc00;
+        }
+        .icons i {
+            margin: 0 15px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        .icons i:hover {
+            color: #ff9f43;
+        }
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.5) translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+            .greeting-popup {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="greeting-popup" id="greeting">
+        <h1>عيد فطر مبارك!</h1>
+        <p>نتمنى لك عيدًا مليئًا بالسعادة والسلام. تقبّل الله طاعاتكم وكل عام وأنتم بخير.</p>
+        <p>بالتوفيق في أيامك القادمة.</p>
+        <button onclick="closePopup()">شكرًا لك</button>
+        <div class="icons">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-lantern"></i>
+            <i class="fas fa-star"></i>
+        </div>
+    </div>
+
+    <script>
+        function closePopup() {
+            const message = document.createElement('div');
+            message.style.position = 'fixed';
+            message.style.top = '50%';
+            message.style.left = '50%';
+            message.style.transform = 'translate(-50%, -50%)';
+            message.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+            message.style.color = 'white';
+            message.style.padding = '30px';
+            message.style.borderRadius = '15px';
+            message.style.boxShadow = '0 8px 20px rgba(0, 0, 0, 0.3)';
+            message.style.fontSize = '1.3rem';
+            message.style.zIndex = '9999';
+            message.innerHTML = 'نتمنى لك كل التوفيق والنجاح في الأيام القادمة. كل عام وأنت بخير!';
+
+            document.body.appendChild(message);
+
+            setTimeout(function() {
+                message.style.opacity = '0';
+                message.style.transition = 'opacity 1s ease';
+                setTimeout(function() {
+                    message.remove();
+                }, 1000);
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
